@@ -29,7 +29,9 @@ function drawGame(){
 
     //game over logic
     let result = isGameOver();
-    if(result) return;
+    if(result){
+      return
+    }
 
     clearScreen();
     drawSnake();
@@ -52,12 +54,12 @@ function drawSnake(){
     //loop through our snakeparts array
     for(let i =0; i < snakeParts.length;i++){
         //draw snake parts
-        let part = snakeParts[i];
-        ctx.fillRect(part.x *tileCount, part.y * tileCount, tileSize, tileSize);
+        let part = snakeParts[i]
+        ctx.fillRect(part.x *tileCount, part.y * tileCount, tileSize, tileSize)
     }
 
     snakeParts.push(new snakePart(headX,headY)); // put item at the end of list next to the head
-    if(snakeParts.lentgh > tailLength){
+    if(snakeParts.length > tailLength){
         snakeParts.shift();
     }
 
@@ -119,8 +121,6 @@ function isGameOver(){
             gameOver = true;
             break;
         }
-        
-       
     }
 
     return gameOver;
