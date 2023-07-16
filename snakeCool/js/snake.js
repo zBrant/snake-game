@@ -156,6 +156,6 @@ SNAKE.Snake = SNAKE.Snake || (function(){
       me.snakeBody = {};
       me.snakeBody[]
 
-
+      /* someday i'll finish it */
    } 
 })
